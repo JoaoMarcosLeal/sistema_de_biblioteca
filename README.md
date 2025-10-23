@@ -65,3 +65,41 @@ Após iniciar o servidor, você pode acessar:
   * **Ambiente de Administração:** $\text{[http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)}$
 
 **(Nota: Você pode precisar criar um superusuário com `python3 manage.py createsuperuser` para acessar o admin.)**
+
+```mermaid
+erDiagram
+  USER ||--o{ EMPRESTIMO : realiza
+  LIVRO ||--o{ EMPRESTIMO : recebe
+  CATEGORIA ||--o{ LIVRO : classifica
+
+  USER {
+    int id
+    string username
+    string email
+  }
+
+  LIVRO {
+    int id
+    string nome
+    string autor
+    int ano
+    string editora
+    int edicao
+    int quantidade_total
+    int quantidade_disponivel
+  }
+
+  CATEGORIA {
+    int id
+    string nome
+  }
+
+  EMPRESTIMO {
+    int id
+    int usuario_id "FK → User.id"
+    int livro_id "FK → Livro.id"
+    date data_emprestimo
+    date data_devolucao_prevista
+    bool devolvido
+  }
+```
