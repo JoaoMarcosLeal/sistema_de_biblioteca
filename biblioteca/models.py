@@ -21,3 +21,6 @@ class Emprestimo(models.Model):
     data_emprestimo = models.DateField("Data do Empréstimo", auto_now_add=True)
     data_devolucao_prevista = models.DateField("Previsão de Devolução")
     devolvido = models.BooleanField("Devolvido", default=False)
+
+    def __str__(self):
+        return f"{self.usuario.username} - {self.livro.nome} - {self.devolvido}"
