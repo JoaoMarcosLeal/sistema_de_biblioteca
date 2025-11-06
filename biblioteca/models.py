@@ -1,9 +1,7 @@
 from django.db import models, transaction
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
-from django.utils import timezone
 
-# --- NOVO ---
 class Categoria(models.Model):
     nome = models.CharField("Categoria", max_length=80, unique=True)
 
@@ -54,11 +52,9 @@ class Emprestimo(models.Model):
         with transaction.atomic():
             criando = self.pk is None
             antigo_devolvido = None
-            antigo_livro_id = None
             if not criando:
                 antigo = Emprestimo.objects.select_for_update().get(pk=self.pk)
                 antigo_devolvido = antigo.devolvido
-                antigo_livro_id = antigo.livro_id
 
             super().save(*args, **kwargs)
 
