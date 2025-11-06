@@ -8,7 +8,7 @@
 
 <div class="row mb-4">
     <div class="col-md-4">
-        <form method="GET" action="{% url 'lista_livros' %}">
+        <form method="GET" action="{% url 'home' %}">
             <div class="input-group">
                 <label class="input-group-text" for="categoria-select">Categoria</label>
                 
@@ -18,7 +18,6 @@
                     name="categoria_id" 
                     onchange="this.form.submit()"
                 >
-                    
                     <option value="0" 
                             {% if not categoria_selecionada_id or categoria_selecionada_id == '0' %}selected{% endif %}>
                         Categorias
@@ -37,6 +36,7 @@
         </form>
     </div>
 </div>
+
 <div class="table-responsive">
     <table class="table table-striped table-hover">
         <thead class="table-dark">

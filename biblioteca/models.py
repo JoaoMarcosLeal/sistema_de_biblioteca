@@ -30,6 +30,8 @@ class Livro(models.Model):
     def clean(self):
         if self.quantidade_disponivel > self.quantidade_total:
             raise ValidationError("Quantidade disponível não pode exceder a quantidade total.")
+        if self.quantidade_disponivel < 0:
+            raise ValidationError("A quantidade disponível não pode ser negativa.")
 
 
 class Emprestimo(models.Model):

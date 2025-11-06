@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Escolha os Livros para Emprestar{% endblock %}
+
+{% block content %}
+  <h1>Escolha os Livros para Emprestar</h1>
+
+  <form method="POST">
+    {% csrf_token %}
+    <div class="row">
+      {% for livro in livros %}
+        <div class="col-md-4">
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">{{ livro.nome }}</h5>
+              <p class="card-text">{{ livro.autor }} - {{ livro.ano }}</p>
+              <label>
+                <input type="checkbox" name="livros" value="{{ livro.id }}"> Pegar Emprestado
+              </label>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="mb-3">
+      <label for="data_devolucao" class="form-label">Data de Devolução</label>
+      <input type="date" class="form-control" name="data_devolucao" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Confirmar Empréstimos</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,11 @@
+nome,autor,ano,editora,edicao,categorias,quantidade_total,quantidade_disponivel
+Livro 1,Autor A,2020,Editora X,1,Ficção,10,5
+Livro 2,Autor B,2019,Editora Y,2,Romance,15,10
+Livro 3,Autor C,2021,Editora Z,3,Aventura,20,15
+Livro 4,Autor D,2018,Editora W,1,Drama,8,3
+Livro 5,Autor E,2022,Editora V,4,Suspense,12,6
+Livro 6,Autor F,2020,Editora U,1,Ficção,18,8
+Livro 7,Autor G,2021,Editora T,2,Romance,14,7
+Livro 8,Autor H,2019,Editora S,3,Ficção Científica,10,5
+Livro 9,Autor I,2017,Editora R,1,História,22,11
+Livro 10,Autor J,2023,Editora Q,5,Terror,25,12
