@@ -33,11 +33,10 @@ source venv/bin/activate
 
 #### 4\. Instalar Dependências
 
-Instale o Django (e outras dependências necessárias, se houver um `requirements.txt`):
+Instale as dependências:
 
 ```bash
-python3 -m pip install django
-# Ou (melhor prática): python3 -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 #### 5\. Aplicar Migrações
@@ -45,7 +44,7 @@ python3 -m pip install django
 Crie e aplique as migrações do banco de dados:
 
 ```bash
-python3 manage.py makemigrations myapp
+python3 manage.py makemigrations biblioteca
 python3 manage.py migrate
 ```
 
